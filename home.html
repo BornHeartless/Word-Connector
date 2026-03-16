@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Connector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="startOverlay" class="overlay">
+    <div class="start-menu">
+      <h2>Выберите сложность</h2>
+    <button onclick="setDifficulty('easy')" id="easy-button">Лёгкий</button>
+    <button onclick="setDifficulty('medium')" id="medium-button">Средний</button>
+    <button onclick="setDifficulty('hard')" id="hard-button">Сложный</button>
+    <h2>выберите уровень</h2>
+    <button onclick="setLanguage('ru')">Русский</button>
+    <button onclick="setLanguage('en')">English</button>
+    </div>
+  </div>
+
+  <div id="pauseOverlay" class="overlay hidden">
+    <div class="pause-menu">
+      <h2 id="pause">Пауза</h2>
+      <button id="resumeBtn">Продолжить</button>
+      <h3>Сменить сложность</h3>
+      <button onclick="setLanguage('ru')">Русский</button>
+      <button onclick="setLanguage('en')">English</button>
+      <button onclick="setDifficulty('easy')">Лёгкий</button>
+      <button onclick="setDifficulty('medium')">Средний</button>
+      <button onclick="setDifficulty('hard')">Сложный</button>
+    </div>
+  </div>
+
+  <header>
+    <h1>Word Connector</h1>
+  </header>
+
+  <main>
+    <p id="message"></p>
+    <p><span id="time">Время:</span> <span id="timer">0</span> сек</p>
+    <div class="grid" id="grid"></div>
+    <p><span id="WordsForSearch">Слова для поиска:</span> <span id="words"></span></p>
+    <button id="pauseBtn">Пауза</button>
+  </main>
+  <button id="startBtn" data-i18n="start">Начать игру</button>
+  <script src="WordConnector.js"></script>
+</body>
+</html>
