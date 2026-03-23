@@ -12,7 +12,9 @@ const translations = {
     foundWord: "Найдено слово",
     time: "Время",
     wordsForSearch: "Слова для поиска:",
-    changeDifficulty: "Сменить сложность"
+    changeDifficulty: "Сменить сложность",
+    chooseDifficulty: "Выберите сложность",
+    chooseLanguage: "Выберите язык"
   },
 
   en: {
@@ -27,7 +29,9 @@ const translations = {
     foundWord: "Word found",
     time: "Time:",
     wordsForSearch: "Words for search:",
-    changeDifficulty: "Change difficulty"
+    changeDifficulty: "Change difficulty",
+    chooseDifficulty: "Choose difficulty",
+    chooseLanguage: "Choose language"
   }
 }
 let levels = {
@@ -106,8 +110,9 @@ let levels = {
     }
   });
 
+
 function loadLevelsFromServer() {
-  fetch("http://localhost:5000/levels")
+  fetch(`http://localhost:5000/levels?lang=${lang}`)
     .then(res => res.json())
     .then(data => {
 
@@ -164,7 +169,7 @@ function loadLevel(levelIndex) {
 window.setLanguage = function(newLang){
 
   lang = newLang;
-
+  
   document.getElementById("startBtn").textContent =
     translations[lang].start;
 
@@ -193,8 +198,12 @@ window.setLanguage = function(newLang){
     translations[lang].medium;
   document.getElementById("hardButton").textContent =
     translations[lang].hard;
+  document.getElementById("ChooseDifficulty").textContent =
+    translations[lang].chooseDifficulty;
+  document.getElementById("ChooseLanguage").textContent =
+    translations[lang].chooseLanguage;
+  loadLevelsFromServer();
 }
-n
 
 window.setDifficulty = function(diff){
 
