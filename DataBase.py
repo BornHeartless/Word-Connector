@@ -74,7 +74,7 @@ levels = [
         ["У","М","Л","А","И","Р","Ш","У","О","Щ","Б","Д","Ж"],
         ["С","В","И","Н","Е","Г","А","В","Ц","Ь","Л","О","Ф"],
 ]),
-     "МЕРСЕДЕС,ФОЛЬЦВАГЕН,БМВ,ХЕНДАЙ,БУГАТТИ,СУЗУКИ,ЯГУAР,ТОЙOТА,МИНИKУПEР,АУДИ,ДЖИП"
+     "МЕРСЕДЕС,ФОЛЬЦВАГЕН,БМВ,ХЕНДАЙ,БУГАТТИ,СУЗУКИ,ЯГУАР,ТОЙОТА,МИНИKУПEР,АУДИ,ДЖИП"
     ),
 
     # EN
@@ -124,6 +124,13 @@ cur.executemany(
     "INSERT INTO levels (difficulty, lang, grid, words) VALUES (?, ?, ?, ?)",
     levels
 )
+cur.execute("""
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE,
+    password TEXT
+)
+""")
 
 conn.commit()
 conn.close()

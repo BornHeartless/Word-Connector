@@ -1,15 +1,15 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 40px);
-  grid-auto-rows: 50px;
+  grid-template-columns: repeat(5, 30px);
+  grid-auto-rows: 36px;
   gap: 3px;
   justify-content: center; /* выравнивание по центру */
   margin: 20px auto;
 }
 
 .cell {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: #6f3131;
   display: flex;
   color: white;
@@ -58,12 +58,14 @@
 }
 
 .pause-menu button {
-  display: block;
+  display: flex;
   width: 100%;
   margin: 10px 0;
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
+  justify-content: flex-end;
+  
 }
 
 .start-menu {
@@ -82,6 +84,17 @@
 
 .start-menu.hidden {
   display: none;
+}
+
+.auth-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#words {
+  white-space: pre-line;
 }
 
 /* .start-overlay {
